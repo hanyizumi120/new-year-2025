@@ -8,23 +8,60 @@
         body {
             margin: 0;
             padding: 0;
-            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAQwAABtbnRyUkdCI');
+            background: linear-gradient(45deg, #d0a1ff, #8b76e0, #f2a3c1); /* Gradient from lilac to blue to girly pink */
             background-size: cover;
-            background-repeat: no-repeat;
             background-attachment: fixed;
             font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
         }
+
+        /* Happy New Year Text Styling */
+        .happy-new-year {
+            font-size: 3em;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 20px;
+            animation: floatText 2s ease-in-out infinite, sparkle 1s linear infinite;
+        }
+
+        /* Animation for floating effect */
+        @keyframes floatText {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Sparkling effect */
+        @keyframes sparkle {
+            0% {
+                text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4, 0 0 15px #ff69b4;
+            }
+            100% {
+                text-shadow: 0 0 5px #ff1493, 0 0 10px #ff1493, 0 0 15px #ff1493;
+            }
+        }
+
         .message-box {
-            background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gIoSUNDX1BST0ZJTEUAAQEAAAIYAAAAAAQwAABtbnRyUkdCI');
-            background-size: cover;
-            background-repeat: no-repeat;
-            width: 300px;
+            background-color: rgba(0, 0, 0, 0.6); /* Darker background for better text visibility */
+            width: 90%;
+            max-width: 400px;
             height: 200px;
             margin: 20px auto;
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            color: #fff;
             font-size: 1.2em;
             text-align: center;
             display: flex;
@@ -32,13 +69,36 @@
             justify-content: center;
             flex-direction: column;
         }
+
+        /* Individual message box background colors */
+        .message-box:nth-child(1) {
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient from purple to blue */
+        }
+
+        .message-box:nth-child(2) {
+            background: linear-gradient(135deg, #ff9800, #ff5722); /* Gradient from orange to red */
+        }
+
+        .message-box:nth-child(3) {
+            background: linear-gradient(135deg, #00c6ff, #0072ff); /* Gradient from light blue to blue */
+        }
+
         .message-box p {
             margin: 0;
             line-height: 1.5;
         }
+
+        @media (max-width: 600px) {
+            .message-box {
+                width: 80%;
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="happy-new-year">✨ Happy New Year 2025! ✨</div>
+
     <div class="message-box">
         <p>🌟 Wishing you a Happy New Year 2025! May this year bring endless joy, good health, and success your way. 🌟</p>
     </div>
